@@ -24,8 +24,29 @@ export default function Upload() {
   };
 
   const handleUpload = () => {
-    alert("Image uploaded successfully!");
-    // Add actual upload logic here (e.g., send file to server)
+    if (!fileInputRef.current.files[0]) {
+      alert("No file chosen!");
+      return;
+    }
+  
+    const file = fileInputRef.current.files[0];
+    const reader = new FileReader();
+  
+    reader.onloadend = () => {
+      const base64Image = reader.result.split(",")[1]; // Extract Base64 data (remove prefix)
+  
+      const jsonData = {
+        filename: file.name,
+        type: file.type,
+        image: base64Image, // Base64 encoded string
+      };
+  
+      console.log("JSON Data:", JSON.stringify(jsonData, null, 2)); // Print JSON to console
+    };
+  
+    reader.readAsDataURL(file); // Convert image to Base64
+
+    
   };
 
   return (
