@@ -12,9 +12,9 @@ export default function Rent() {
         },
         {
           id: 2,
-          name: "iPhone 14 Pro",
-          price: "$20/day",
-          image: "https://via.placeholder.com/150",
+          name: "Drone",
+          price: "Rs 1000/day",
+          image: "https://static.vecteezy.com/system/resources/previews/049/514/997/non_2x/aerial-drone-with-camera-hovering-in-clear-blue-sky-during-daytime-cut-out-transparent-png.png",
         },
         {
           id: 3,

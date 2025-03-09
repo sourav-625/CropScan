@@ -60,6 +60,7 @@ export default function Upload() {
         } catch (error) {
           console.error("Error uploading image:", error);
         }
+        handleRemoveFile();
       };
 
       addImage(); // Call the API function

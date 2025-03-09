@@ -12,6 +12,8 @@ app.use(express.urlencoded({ limit: "10mb", extended: true })); //Increases the 
 
 //Available Routes
 app.use("/api/images", require("./routes/addimages"));
+app.use("/api/images", require("./routes/fetchimages"));
+app.use("/api/images", require("./routes/deleteimages"));
 
 app.listen(port, () => {
     console.log(`Backend Server listening on port ${port}`)
