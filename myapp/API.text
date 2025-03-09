@@ -1,0 +1,14 @@
+  const host = "http://localhost:5000"
+  const addImage = async () => {
+    
+    const response = await fetch(`${host}/api/imagess/addimage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(jsonData)
+    });
+     const note = await response.json();
+     console.log(note);
+    
+  }

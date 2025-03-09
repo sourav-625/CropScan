@@ -4,6 +4,7 @@ export default function Upload() {
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState("No file chosen");
   const fileInputRef = useRef(null);
+  const host = "http://localhost:5000";
 
   const handleButtonClick = () => {
     fileInputRef.current.click();
@@ -28,25 +29,43 @@ export default function Upload() {
       alert("No file chosen!");
       return;
     }
-  
+
     const file = fileInputRef.current.files[0];
     const reader = new FileReader();
-  
-    reader.onloadend = () => {
-      const base64Image = reader.result.split(",")[1]; // Extract Base64 data (remove prefix)
-  
+
+    reader.onloadend = async () => {
+      const base64Image = reader.result.split(",")[1]; // Extract Base64 data
+
       const jsonData = {
         filename: file.name,
         type: file.type,
         image: base64Image, // Base64 encoded string
       };
-  
-      console.log("JSON Data:", JSON.stringify(jsonData, null, 2)); // Print JSON to console
-    };
-  
-    reader.readAsDataURL(file); // Convert image to Base64
 
-    
+      console.log("JSON Data:", JSON.stringify(jsonData, null, 2)); // Print JSON to console
+
+      // Call API function
+      const addImage = async () => {
+        try {
+          const response = await fetch(`${host}/api/images/addimage`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonData),
+          });
+
+          const note = await response.json();
+          console.log("Response from API:", note);
+        } catch (error) {
+          console.error("Error uploading image:", error);
+        }
+      };
+
+      addImage(); // Call the API function
+    };
+
+    reader.readAsDataURL(file); // Convert image to Base64
   };
 
   return (
