@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mongURI = "mongodb://localhost:27017/Ag-Tech?directConnection=true&tls=false&readPreference=primary";
+const mongURI = "mongodb+srv://ninjaplays792020:letsgowithatlas@omsinghatlas.wi2ab.mongodb.net/Ag-Tech";
 
 const connectToMongo = ()=>{
     mongoose.connect(mongURI);
