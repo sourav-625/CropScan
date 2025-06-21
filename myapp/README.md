@@ -1,4 +1,4 @@
-# CropScan: Smart Crop Monitoring System Using Thermal Imaging
+# CropScan IR: Smart Crop Monitoring System Using Thermal Imaging
 
 CropScan is an experimental AI-based agricultural monitoring tool that leverages **thermal imaging** and **machine learning** to analyze crop health conditions including:
 - 🌿 Pest infestation and disease detection
