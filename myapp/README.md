@@ -71,6 +71,8 @@ Now you can view the react app opened in your browser on [http://127.0.0.1:3000/
 We welcome contributions from researchers, engineers, and agritech developers.
 Please feel free to open issues or submit a pull request after forking this repository and committing your changes on a separate branch.
 
+
+
 > ⚠️ Disclaimer
 > This project is currently in its experimental and theoretical stage.
 > The ML model and its predictions are based on synthetically generated or simulated data.
