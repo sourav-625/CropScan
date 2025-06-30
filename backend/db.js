@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mongURI = "mongodb+srv://ninjaplays792020:letsgowithatlas@omsinghatlas.wi2ab.mongodb.net/Ag-Tech";
+const mongURI = databaseurl;
 
 const connectToMongo = ()=>{
     mongoose.connect(mongURI);
